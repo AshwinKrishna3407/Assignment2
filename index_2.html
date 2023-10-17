@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Music Streaming around the World</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="index.css" media="all">
+
+  <style>
+    /* [existing styles you provided] */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💼 Jobs Trends in Australia (2018) 📈</h1>
+    </div>
+
+
+    <div class="row">
+      <div class="column">
+        <h2>Job postings across Australia</h2>
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="mapVis" class="vis-container"></div>
+          </div>
+        </div>
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <p>We can see that the job postings are more populated in the capital cities, especially those in the south
+              east of Australia. This can be attributed to the fact that most of Australia is still very loosely populated. The density of population is high only within the metropolitan cities that are highlighted by the bubbles, which explains the density of jobs also being greater in the same cities. Therefore, living in one of these developed cities provides a clear advantage to gaining job opportunities </p>
+          </div>
+          <div class="pure-u-1-2" id="map_hover">
+            <p><i>📝 Hover over the city points in the map to see more information about them.</i></p>
+            <br>
+            <p><i>✨ The top 4 cities with the most job postings are highlighted in special colors</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="column">
+        <h2>Influence of Age and Experience on Salary</h2>
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="heatmapVis" class="vis-container"></div>
+          </div>
+        </div>
+
+        <p>There is a strong trend of higher salaries in older people with years of experience. This is indicated
+          through the prevalence of darker shades in the top right portion of the heatmap. The older an individual is, the more experience they tend to have which justifies their higher pay</p> <br>
+          <p><i>📝 Hover over the shaded rectangles in the chart to see more information about them.</i></p>
+
+      </div>
+      <div class="column">
+        <h2>Cites with the highest salaries</h2>
+        <br />
+
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="stackedBarVis" class="vis-container"></div>
+          </div>
+        </div>
+        <p>Sydney has the most jobs overall, while Melbourne has most high paying job within the dataset explored. Perth
+          only occupies the lower end of the spectrum while the other three cities are distributed in similar salary
+          brackets. The bracket ranging from $150k to $200k is empty</p> <br/>
+        <p> <i>🖱️ Click on the countries in the legend to highlight the data from that country.</i></p>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>Made by Taha Ansari</p>
+    </div>
+  <footer>
+    <!-- You may include a footer like the original template if needed -->
+  </footer>
+</body>
+
+<script type="text/javascript">
+  var specVis1 = "Map.vl.json";
+  vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) { }).catch(console.error);
+
+  var specVis2 = "Interactive.vl.json";
+  vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) { }).catch(console.error);
+
+  var specVis3 = "Movement.vl.json";
+  vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) { }).catch(console.error);
+  
+  var specVis4 = "LongBar.json";
+  vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) { }).catch(console.error);
+</script>
+</html>
